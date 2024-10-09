@@ -1,0 +1,1 @@
+/workspaces/osfall24/rust_assignments/Assignment09/task_01_temperature_converter/target/debug/task_01_temperature_converter: /workspaces/osfall24/rust_assignments/Assignment09/task_01_temperature_converter/src/main.rs
