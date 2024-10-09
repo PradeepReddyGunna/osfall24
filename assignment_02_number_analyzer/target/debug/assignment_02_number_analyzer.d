@@ -1,0 +1,1 @@
+/workspaces/osfall24/assignment_02_number_analyzer/target/debug/assignment_02_number_analyzer: /workspaces/osfall24/assignment_02_number_analyzer/src/main.rs
