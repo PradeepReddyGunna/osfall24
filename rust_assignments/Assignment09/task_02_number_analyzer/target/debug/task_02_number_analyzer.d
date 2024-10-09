@@ -1,0 +1,1 @@
+/workspaces/osfall24/rust_assignments/Assignment09/task_02_number_analyzer/target/debug/task_02_number_analyzer: /workspaces/osfall24/rust_assignments/Assignment09/task_02_number_analyzer/src/main.rs
