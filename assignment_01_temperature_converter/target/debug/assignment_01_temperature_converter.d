@@ -1,1 +1,0 @@
-/workspaces/osfall24/assignment_01_temperature_converter/target/debug/assignment_01_temperature_converter: /workspaces/osfall24/assignment_01_temperature_converter/src/main.rs
