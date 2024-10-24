@@ -1,32 +1,33 @@
+// Import the mlfq module, which contains the MLFQ scheduler and Process structs
 mod mlfq;
 
 fn main() {
-    // Create a new MLFQ scheduler with 3 levels and specified time quanta
+    // Initialize a new MLFQ scheduler with 3 levels and respective time slices of 2, 4, and 8 units
     let mut scheduler = mlfq::MLFQ::new(3, vec![2, 4, 8]);
 
-    // Define and add processes to the scheduler
+    // Add processes to the scheduler with their IDs, priorities, and execution times
     let processes = vec![
         mlfq::Process { id: 1, priority: 0, remaining_time: 10, total_executed_time: 0 },
         mlfq::Process { id: 2, priority: 0, remaining_time: 3, total_executed_time: 0 },
         mlfq::Process { id: 3, priority: 1, remaining_time: 5, total_executed_time: 0 },
     ];
-    
+
     for process in processes {
         scheduler.add_process(process);
     }
 
-    // Execute all processes in the highest priority queue
-    for queue_index in 0..scheduler.num_levels {
-        while !scheduler.queues[queue_index].is_empty() {
-            scheduler.execute_process(queue_index);
+    // Process each queue in the scheduler
+    for level in 0..scheduler.num_levels {
+        while !scheduler.queues[level].is_empty() {
+            scheduler.execute_process(level);
         }
     }
 
-    // Simulate the passage of time and trigger a priority boost if necessary
+    // Simulate time passage and update the scheduler's state
     scheduler.update_time(100);
 
-    // Print the state of the queues after the boost
-    for (i, queue) in scheduler.queues.iter().enumerate() {
-        println!("Queue {}: {:?}", i, queue);
+    // Print the current state of each queue in the scheduler
+    for (level, queue) in scheduler.queues.iter().enumerate() {
+        println!("Queue {}: {:?}", level, queue);
     }
 }
